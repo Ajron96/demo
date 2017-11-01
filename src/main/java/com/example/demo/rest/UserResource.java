@@ -45,7 +45,7 @@ public class UserResource {
     public ResponseEntity<Void> createUser(@RequestBody UserDto dto) throws URISyntaxException {
             User newUser = UserMapper.from(dto);
             userRepository.save(newUser);
-            return ResponseEntity.created(new URI("/user/"+newUser.getId())).build();
+            return ResponseEntity.created(new URI("/users/"+newUser.getId())).build();
     }
 
     @RequestMapping(method = PUT, path = "users/{id}")
